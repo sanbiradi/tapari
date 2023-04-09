@@ -1,0 +1,18 @@
+
+# HTID:21521730: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+ErrorDocument 404 /error404.php
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:21521730:
+
+php_flag output_buffering on
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+
+Options All -Indexes
